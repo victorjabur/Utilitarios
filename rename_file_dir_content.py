@@ -27,7 +27,7 @@ def renomear_dir_ou_file(item):
 def itera(item):
     for elemento in os.listdir(item):
         elemento = os.path.join(item,elemento)
-        if elemento.find('.svn') == -1:
+        if elemento.find('.svn') == -1 and elemento.find('CVS') == -1:
             if os.path.isdir(elemento):
                 itera(renomear_dir_ou_file(elemento))
             else:
