@@ -23,11 +23,14 @@ def lancar(r, data, hora_inicio, hora_fim, descricao):
 
 r = login()
 lista_lancto = []
-lista_lancto.append(lancto.lancto('2012-01-28', '13:00', '16:30', 'contestacao 11g'))
-lista_lancto.append(lancto.lancto('2012-01-30', '09:45', '12:40', 'contestacao 11g'))
-lista_lancto.append(lancto.lancto('2012-01-30', '13:20', '20:30', 'contestacao 11g'))
-lista_lancto.append(lancto.lancto('2012-01-31', '10:00', '13:00', 'contestacao 11g'))
-lista_lancto.append(lancto.lancto('2012-01-31', '14:00', '19:00', 'contestacao 11g'))
+lista_lancto.append(lancto.lancto('2012-02-17', '00:00', '00:00', 'contestacao 11g'))
+lista_lancto.append(lancto.lancto('2012-02-17', '00:00', '00:00', 'contestacao 11g'))
+lista_lancto.append(lancto.lancto('2012-02-22', '00:00', '00:00', 'contestacao 11g'))
+lista_lancto.append(lancto.lancto('2012-02-22', '00:00', '00:00', 'contestacao 11g'))
+lista_lancto.append(lancto.lancto('2012-02-23', '00:00', '00:00', 'contestacao 11g'))
+lista_lancto.append(lancto.lancto('2012-02-23', '00:00', '00:00', 'contestacao 11g'))
+lista_lancto.append(lancto.lancto('2012-02-24', '00:00', '00:00', 'contestacao 11g'))
+lista_lancto.append(lancto.lancto('2012-02-24', '00:00', '00:00', 'contestacao 11g'))
 
 
 for lcto in lista_lancto:
