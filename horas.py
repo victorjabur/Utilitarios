@@ -5,7 +5,7 @@ from datetime import datetime
 
 def login():
     usuario = 'user'
-    senha = 'senha'
+    senha = 'pass'
     post_login = {'login':'login', 'username':usuario, 'password':senha, 'login.x':'13', 'login.y':'12'}
     r = requests.post('http://www.dscon.com.br/pmo/index.php', post_login)
     return r
@@ -23,14 +23,7 @@ def lancar(r, data, hora_inicio, hora_fim, descricao):
 
 r = login()
 lista_lancto = []
-lista_lancto.append(lancto.lancto('2012-02-17', '00:00', '00:00', 'contestacao 11g'))
-lista_lancto.append(lancto.lancto('2012-02-17', '00:00', '00:00', 'contestacao 11g'))
-lista_lancto.append(lancto.lancto('2012-02-22', '00:00', '00:00', 'contestacao 11g'))
-lista_lancto.append(lancto.lancto('2012-02-22', '00:00', '00:00', 'contestacao 11g'))
-lista_lancto.append(lancto.lancto('2012-02-23', '00:00', '00:00', 'contestacao 11g'))
-lista_lancto.append(lancto.lancto('2012-02-23', '00:00', '00:00', 'contestacao 11g'))
-lista_lancto.append(lancto.lancto('2012-02-24', '00:00', '00:00', 'contestacao 11g'))
-lista_lancto.append(lancto.lancto('2012-02-24', '00:00', '00:00', 'contestacao 11g'))
+lista_lancto.append(lancto.lancto('2012-03-01', '11:00', '11:50', 'contestacao 11g'))
 
 
 for lcto in lista_lancto:
