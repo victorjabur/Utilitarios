@@ -1,6 +1,6 @@
 #! /usr/bin/python
 # -*- coding: utf-8 -*-
-import requests, lancto
+import requests
 from datetime import datetime
 
 class Horas:
@@ -12,10 +12,10 @@ class Horas:
         r = requests.post('http://www.dscon.com.br/pmo/index.php', post_login)
         return r
 
-    def lancar(self, r, data, hora_inicio, hora_fim, descricao):
+    def lancar(self, r, data, hora_inicio, hora_fim, descricao, projeto, desc_projeto):
         id_criador = '68'
-        task_id = '3604'
-        task_name = unicode('ALOCAÇÃO', 'utf-8')
+        task_id = projeto
+        task_name = unicode(desc_projeto, 'utf-8')
         descricao = unicode(descricao, 'utf-8')
         task_log_id = ''
 
@@ -26,18 +26,20 @@ class Horas:
     def main(self):
         r = self.login()
         lista_lancto = []
-        lista_lancto.append(lancto.lancto('2012-03-12', '10:30', '12:30', 'contestacao 11g'))
+        lista_lancto.append(Lancto('2012-04-29', '13:00', '19:00', 'Finalizacao do ...', '4058', 'DESENVOLVIMENTO'))
         # Colocar os lancamentos aqui ...
 
         for lcto in lista_lancto:
-            self.lancar(r, lcto.data, lcto.hora_inicio, lcto.hora_fim, lcto.descricao)
+            self.lancar(r, lcto.data, lcto.hora_inicio, lcto.hora_fim, lcto.descricao, lcto.projeto, lcto.desc_projeto)
 
 class Lancto:
-    def __init__(self, data, hora_inicio, hora_fim, descricao):
+    def __init__(self, data, hora_inicio, hora_fim, descricao, projeto, desc_projeto):
         self.data = data
         self.hora_inicio = hora_inicio
         self.hora_fim = hora_fim
         self.descricao = descricao
+        self.projeto = projeto
+        self.desc_projeto = desc_projeto
 
 if __name__ == "__main__":
     horas = Horas()
